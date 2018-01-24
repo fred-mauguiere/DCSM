@@ -1,1 +1,4 @@
-com/discngine/dcsm/controller/HomeController.class
+com\discngine\dcsm\domain\Plan.class
+com\discngine\dcsm\domain\Application.class
+com\discngine\dcsm\controller\ApplicationController.class
+com\discngine\dcsm\controller\HomeController.class
