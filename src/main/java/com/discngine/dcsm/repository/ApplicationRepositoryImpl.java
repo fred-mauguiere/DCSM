@@ -1,26 +1,31 @@
 package com.discngine.dcsm.repository;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
-import javax.sql.DataSource;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.discngine.dcsm.domain.Application;
 
 @Repository
+@Transactional(readOnly = true)
 public class ApplicationRepositoryImpl implements ApplicationRepository{
+	
 	@Autowired
-	private DataSource dataSource;
+	private SessionFactory sessionFactory;
 	
 	@Override
-	public Application getApplicationById() {
-		Application application = null;
-		return application;
+	@SuppressWarnings("unchecked")
+	public List<Application> getAllApplications() {
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "FROM DC_APPLICATION";
+		Query<Application> query = session.createQuery(hql);
+		List<Application> appList = query.list();
+		return appList;
 	}
 }

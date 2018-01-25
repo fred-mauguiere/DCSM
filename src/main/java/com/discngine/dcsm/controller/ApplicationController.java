@@ -3,18 +3,19 @@ package com.discngine.dcsm.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.discngine.dcsm.domain.Application;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.discngine.dcsm.service.ApplicationService;
 
 @Controller
 public class ApplicationController {
+	
+	@Autowired
+	private ApplicationService applicationService;
+	
 	@RequestMapping("/applications")
-	public String list(Model model) {
-		Application threedescision = new Application();
-		threedescision.setApplicationCode("3DESC");
-		threedescision.setLabel("3 DESCISION");
-		threedescision.setDescription("Discngine 3descision");
-		threedescision.setApplicationUrl("http://3descision/");
-		model.addAttribute("application", threedescision);
+	public String listapps(Model model) {
+		model.addAttribute("application",applicationService.getAllApplications());
 		return "applications";
 	}
 }

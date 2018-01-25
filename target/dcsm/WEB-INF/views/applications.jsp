@@ -23,14 +23,15 @@
 
 	<section class="container">
 	<div class="row">
-		<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
-			<div class="thumbnail">
-				<div class="caption">
-					<h3>${application.label}</h3>
-					<p>${application.description}</p>
+		<c:forEach items="${products}" var="product">
+			<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
+				<div class="thumbnail">
+					<div class="caption">
+						<h3>${application.applicationUrl}</h3>
+					</div>
 				</div>
 			</div>
-		</div>
+		</c:forEach>
 	</div>
 	</section>
 </body>

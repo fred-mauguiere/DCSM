@@ -4,5 +4,10 @@ import java.util.List;
 import com.discngine.dcsm.domain.Application;
 
 public interface ApplicationRepository {
-	Application getAllApplicationById();
+	
+	/**
+	 * Get all applications
+	 * @return a list of all applications
+	 */
+	public List<Application> getAllApplications();
 }

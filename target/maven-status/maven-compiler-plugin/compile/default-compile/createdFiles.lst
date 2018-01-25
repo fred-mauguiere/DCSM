@@ -1,4 +1,8 @@
+com\discngine\dcsm\repository\ApplicationRepositoryImpl.class
+com\discngine\dcsm\controller\HomeController.class
+com\discngine\dcsm\repository\ApplicationRepository.class
+com\discngine\dcsm\service\ApplicationService.class
+com\discngine\dcsm\service\ApplicationServiceImpl.class
 com\discngine\dcsm\domain\Plan.class
 com\discngine\dcsm\domain\Application.class
 com\discngine\dcsm\controller\ApplicationController.class
-com\discngine\dcsm\controller\HomeController.class
