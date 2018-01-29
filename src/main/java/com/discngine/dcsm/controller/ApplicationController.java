@@ -15,7 +15,7 @@ public class ApplicationController {
 	
 	@RequestMapping("/applications")
 	public String listapps(Model model) {
-		model.addAttribute("application",applicationService.getAllApplications());
+		model.addAttribute("applications",applicationService.getAllApplications());
 		return "applications";
 	}
 }

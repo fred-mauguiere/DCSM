@@ -23,7 +23,7 @@ public class ApplicationRepositoryImpl implements ApplicationRepository{
 	@SuppressWarnings("unchecked")
 	public List<Application> getAllApplications() {
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "FROM DC_APPLICATION";
+		String hql = "FROM Application";
 		Query<Application> query = session.createQuery(hql);
 		List<Application> appList = query.list();
 		return appList;
